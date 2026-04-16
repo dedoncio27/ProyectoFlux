@@ -207,8 +207,6 @@ object AjustesCaloryPage : Screen{
                         onCheckedChange = { isAuto ->
                             autoCalcular = isAuto
 
-                            // ¡ESTA ES LA CLAVE! Al mover el switch, calculamos qué calorías tocan
-                            // y guardamos el objeto completo inmediatamente.
                             val cals = if (isAuto) caloriasFinales else caloriasManual.toIntOrNull() ?: 2000
                             val actual = savedCaloriasObjetivo ?: CaloriasObjetivo()
                             val nuevoObjetivo = actual.copy(calorias = cals)
@@ -260,7 +258,7 @@ object AjustesCaloryPage : Screen{
                 
                 Text("Distribución de Macronutrientes", fontWeight = FontWeight.Bold, color = NegroPuro, fontSize = 18.sp)
 
-                // --- BOX DE DISTRIBUCIÓN CLICABLE ---
+                
                 val currentTarget = savedCaloriasObjetivo ?: CaloriasObjetivo()
                 val totalCalDouble = currentTarget.calorias.toDouble().coerceAtLeast(1.0)
                 val pProt = (currentTarget.proteinas * 4) / totalCalDouble
