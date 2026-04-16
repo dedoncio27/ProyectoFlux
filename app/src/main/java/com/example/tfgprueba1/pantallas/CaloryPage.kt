@@ -193,7 +193,7 @@ object CaloryPageScreen: Tab {
 
     @Composable
     fun CaloryGaugeChart(actual: Double, objetivo: Double) {
-        val sweepTotal = 240f // Más pronunciada que una semicircular (180)
+        val sweepTotal = 240f 
         val startAngle = 150f
         val ratio = (actual / objetivo).toFloat().coerceIn(0f, 1f)
         val progressSweep = ratio * sweepTotal
@@ -201,10 +201,10 @@ object CaloryPageScreen: Tab {
 
         Box(contentAlignment = Alignment.Center, modifier = Modifier.size(160.dp)) {
             Canvas(modifier = Modifier.fillMaxSize()) {
-                // Arco de fondo
+                
                 drawArc(color = Color.LightGray.copy(alpha = 0.2f), startAngle = startAngle, sweepAngle = sweepTotal,
                     useCenter = false, style = Stroke(width = 28f, cap = StrokeCap.Round))
-                // Arco de progreso
+                
                 drawArc(color = color, startAngle = startAngle, sweepAngle = progressSweep,
                     useCenter = false, style = Stroke(width = 28f, cap = StrokeCap.Round))
             }
