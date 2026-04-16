@@ -98,9 +98,9 @@ object DistribucionDeNutrientes : Screen {
         )
 
         
-        val colorHC = RosaCarbos  // Azul
-        val colorProt = AzulProte // Rojo
-        val colorFat = AmarilloGrasas  // Ámbar/Amarillo
+        val colorHC = RosaCarbos 
+        val colorProt = AzulProte 
+        val colorFat = AmarilloGrasas 
 
         
         val currentPercs = if (selectedOption == "Personalizada") {
@@ -245,7 +245,7 @@ object DistribucionDeNutrientes : Screen {
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
-                    // Gráfica Circular (Pie Chart)
+                    
                     Box(modifier = Modifier.size(150.dp), contentAlignment = Alignment.Center) {
                         Canvas(modifier = Modifier.size(150.dp)) {
                             val sum = currentPercs.first + currentPercs.second + currentPercs.third
@@ -263,7 +263,7 @@ object DistribucionDeNutrientes : Screen {
                         }
                     }
 
-                    // Información de Gramos
+                    
                     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                         MacroInfoRow(colorHC, "HC", "${gramosHC.toInt()}g", "${(currentPercs.first * 100).toInt()}%")
                         MacroInfoRow(colorProt, "Prot", "${gramosProt.toInt()}g", "${(currentPercs.second * 100).toInt()}%")
