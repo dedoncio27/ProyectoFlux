@@ -362,7 +362,7 @@ class AñadeOEditaScreen(val alimento: DatosAlimento, val comprueba: Boolean) : 
                     }
                 }
 
-                // SOLUCIÓN: El texto se pone AQUÍ (dentro del Box, fuera del Canvas)
+                
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(
                         text = kcal.toInt().toString(),
